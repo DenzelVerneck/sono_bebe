@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Método Noite Tranquila - Suas noites sem dormir estão chegando ao fim</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18074797539"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-18074797539');
+    </script>
+
     <link rel="icon" type="image/png" href="favicon.png">
-    
+
     <!-- Preloads -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,66 +26,180 @@
 
     <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="css/style.css">
+    </noscript>
 
     <!-- Critical CSS (Above the Fold) -->
     <style>
         :root {
-            --primary: #F6993F; --primary-hover: #ED8936; --bg-color: #D9EFFF;
-            --text-main: #000000; --text-muted: #2D3748; --accent: #007BFF; --white: #FFFFFF;
-            --font-heading: 'Roboto Slab', serif; --font-body: 'Montserrat', sans-serif;
+            --primary: #F6993F;
+            --primary-hover: #ED8936;
+            --bg-color: #D9EFFF;
+            --text-main: #000000;
+            --text-muted: #2D3748;
+            --accent: #007BFF;
+            --white: #FFFFFF;
+            --font-heading: 'Roboto Slab', serif;
+            --font-body: 'Montserrat', sans-serif;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        body { font-family: var(--font-body); background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; overflow-x: hidden; font-weight: 600; }
-        h1, h2 { font-family: var(--font-heading); color: var(--text-main); line-height: 1.2; font-weight: 800; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        .text-center { text-align: center; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 600;
+        }
+
+        h1,
+        h2 {
+            font-family: var(--font-heading);
+            color: var(--text-main);
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
         .cta-button {
-            display: inline-block; background-color: var(--primary); color: var(--white);
-            font-size: 1.5rem; font-weight: 800; padding: 1.25rem 2rem; border-radius: 12px;
-            text-decoration: none; text-align: center; text-transform: uppercase;
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 800;
+            padding: 1.25rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
             box-shadow: 0 4px 20px rgba(246, 153, 63, 0.4);
-            transition: all 0.3s ease; width: 100%; max-width: 600px; margin: 1.5rem auto; border: none; cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 600px;
+            margin: 1.5rem auto;
+            border: none;
+            cursor: pointer;
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(246, 153, 63, 0.4); }
-            50% { transform: scale(1.05); box-shadow: 0 8px 30px rgba(246, 153, 63, 0.6); }
-            100% { transform: scale(1); box-shadow: 0 4px 15px rgba(246, 153, 63, 0.4); }
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(246, 153, 63, 0.4);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 30px rgba(246, 153, 63, 0.6);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(246, 153, 63, 0.4);
+            }
         }
-        .hero { background: linear-gradient(180deg, #BAE6FF 0%, #D9EFFF 100%); padding: 4rem 0; text-align: center; }
-        .top-badge { display: inline-block; background-color: var(--white); color: var(--accent); font-weight: 800; padding: 8px 20px; border-radius: 50px; margin-bottom: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .hero h1 { font-size: 2.8rem; max-width: 800px; margin: 0 auto 1.5rem; }
-        .subheadline { font-size: 1.6rem; color: var(--accent); font-weight: 800; max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.4; }
-        .hero-paragraph { font-size: 1.2rem; color: var(--text-muted); max-width: 750px; margin: 0 auto 2.5rem; }
-        .hero-img { width: 100%; max-width: 800px; height: auto; border-radius: 15px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-top: 1rem; }
+
+        .hero {
+            background: linear-gradient(180deg, #BAE6FF 0%, #D9EFFF 100%);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .top-badge {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--accent);
+            font-weight: 800;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .subheadline {
+            font-size: 1.6rem;
+            color: var(--accent);
+            font-weight: 800;
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.4;
+        }
+
+        .hero-paragraph {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+        }
     </style>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto+Slab:wght@400;700;800;900&display=swap" rel="stylesheet">
-    <meta name="description" content="Descubra como fazer seu bebê dormir mais de 10 horas seguidas já nas próximas semanas.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto+Slab:wght@400;700;800;900&display=swap"
+        rel="stylesheet">
+    <meta name="description"
+        content="Descubra como fazer seu bebê dormir mais de 10 horas seguidas já nas próximas semanas.">
 </head>
+
 <body>
 
     <!-- BLOCO 1 - ATENÇÃO (Hero Section) -->
     <section class="hero">
         <div class="container">
             <span class="top-badge">👶 Mais de 1.000 bebês dormindo a noite toda</span>
-            
+
             <h1>As suas noites sem dormir estão chegando ao fim</h1>
-            <p class="subheadline">Descubra como fazer seu bebê dormir mais de 10 horas seguidas — já nas próximas semanas</p>
-            
-            <p class="hero-paragraph">O problema não é o seu bebê... são os sistemas de sono dele que estão desorganizados. Por isso criamos o Método Noite Tranquila com a missão de acabar com a privação do sono e com a exaustão materna.</p>
-            
+            <p class="subheadline">Descubra como fazer seu bebê dormir mais de 10 horas seguidas — já nas próximas
+                semanas</p>
+
+            <p class="hero-paragraph">O problema não é o seu bebê... são os sistemas de sono dele que estão
+                desorganizados. Por isso criamos o Método Noite Tranquila com a missão de acabar com a privação do sono
+                e com a exaustão materna.</p>
+
             <div class="bonus-dark-box">
-                <p>Além do curso online completo, entrando hoje, você receberá acesso à uma <strong>Consultora do Sono Certificada (de graça!)</strong></p>
+                <p>Além do curso online completo, entrando hoje, você receberá acesso à uma <strong>Consultora do Sono
+                        Certificada (de graça!)</strong></p>
             </div>
-            
-            <a href="https://pay.cakto.com.br/rs6voyf_855079" class="cta-button">QUERO ORGANIZAR O SONO DO MEU BEBÊ →</a>
-            
+
+            <a href="https://pay.cakto.com.br/rs6voyf_855079" class="cta-button">QUERO ORGANIZAR O SONO DO MEU BEBÊ
+                →</a>
+
             <div class="trust-seal">
                 <span>🛡️ 7 dias de garantia incondicional</span>
             </div>
-            <img src="images/hero_baby_sleep.png" alt="Bebê dormindo tranquilamente" class="hero-img" width="800" height="500" fetchpriority="high">
+            <img src="images/hero_baby_sleep.png" alt="Bebê dormindo tranquilamente" class="hero-img" width="800"
+                height="500" fetchpriority="high">
         </div>
     </section>
 
@@ -81,15 +207,17 @@
     <section class="white-bg">
         <div class="container text-center">
             <h2>Provas que o Método funciona em qualquer família</h2>
-            
+
             <div class="whatsapp-prints">
                 <div class="wa-chat">
-                    <div class="wa-message wa-received">Karlinha, ontem fez 7 dias. Ele dormiu das 20h às 6:30! Não acordou UMA única vez!! 😭😭🙏🏻</div>
+                    <div class="wa-message wa-received">Karlinha, ontem fez 7 dias. Ele dormiu das 20h às 6:30! Não
+                        acordou UMA única vez!! 😭😭🙏🏻</div>
                     <div class="wa-message wa-sent">AAA que emoção!! Eu sabia que ia dar certo! 🥰</div>
                 </div>
             </div>
-            
-            <a href="https://pay.cakto.com.br/rs6voyf_855079" class="cta-button">QUERO ORGANIZAR O SONO DO MEU BEBÊ →</a>
+
+            <a href="https://pay.cakto.com.br/rs6voyf_855079" class="cta-button">QUERO ORGANIZAR O SONO DO MEU BEBÊ
+                →</a>
         </div>
     </section>
 
@@ -97,7 +225,7 @@
     <section class="blue-light-bg">
         <div class="container">
             <h2>Reconhece alguma dessas situações?</h2>
-            
+
             <div class="cozy-card">
                 <div class="cozy-card-content">
                     <ul class="cozy-list">
@@ -112,7 +240,8 @@
             </div>
 
             <div class="empathy-box">
-                "Você não está fazendo nada errado. Simplesmente ninguém te ensinou como o sono do seu bebê realmente funciona."
+                "Você não está fazendo nada errado. Simplesmente ninguém te ensinou como o sono do seu bebê realmente
+                funciona."
             </div>
         </div>
     </section>
@@ -121,11 +250,12 @@
     <section class="white-bg">
         <div class="container">
             <h2>O que é o Método Noite Tranquila?</h2>
-            
+
             <div class="cozy-card">
                 <div class="cozy-card-content">
                     <h3>O ambiente perfeito para um sono de qualidade</h3>
-                    <p>Aqui trabalharemos o passo a passo completo de um ambiente seguro e adequado para o bebê dormir bem.</p>
+                    <p>Aqui trabalharemos o passo a passo completo de um ambiente seguro e adequado para o bebê dormir
+                        bem.</p>
                     <ul class="cozy-list">
                         <li>Por que seu bebê acorda toda noite — e o que fazer</li>
                         <li>Como ajustar o ciclo circadiano de forma natural</li>
@@ -137,7 +267,8 @@
                     </ul>
                 </div>
                 <div class="cozy-card-image">
-                    <img src="images/ebook_mockup_new.jpg" alt="Metodo Noite Tranquila" width="300" height="533" loading="lazy">
+                    <img src="images/ebook_mockup_new.jpg" alt="Metodo Noite Tranquila" width="300" height="533"
+                        loading="lazy">
                 </div>
             </div>
         </div>
@@ -147,18 +278,20 @@
     <section class="blue-strong-bg">
         <div class="container">
             <h2 class="text-center">Tudo que você recebe hoje</h2>
-            
+
             <div class="stack-box">
                 <div class="stack-item"><span>📘 Guia Completo (PDF)</span> <span>→ R$ 97</span></div>
                 <div class="stack-item"><span>📋 Tabela de Rotinas</span> <span>→ R$ 47</span></div>
                 <div class="stack-item"><span>🌙 Plano das 7 Noites</span> <span>→ R$ 47</span></div>
-                <div class="stack-item bonus"><span>🎁 BÔNUS: Acesso à Consultora do Sono</span> <span class="bonus-badge">GRÁTIS HOJE</span></div>
+                <div class="stack-item bonus"><span>🎁 BÔNUS: Acesso à Consultora do Sono</span> <span
+                        class="bonus-badge">GRÁTIS HOJE</span></div>
             </div>
 
             <div class="pricing text-center">
                 <span class="price-old">De R$ 595</span>
                 <div class="price-new">Por R$ 39,90</div>
-                <a href="https://pay.cakto.com.br/rs6voyf_855079" class="cta-button">GARANTIR ACESSO AGORA POR R$ 39,90 →</a>
+                <a href="https://pay.cakto.com.br/rs6voyf_855079" class="cta-button">GARANTIR ACESSO AGORA POR R$ 39,90
+                    →</a>
                 <p>Pagamento único • Acesso vitalício</p>
             </div>
         </div>
@@ -169,10 +302,23 @@
         <div class="container">
             <h2>Perguntas Frequentes</h2>
             <div class="faq-list">
-                <div class="faq-item"><h4>❓ Funciona para qualquer idade?</h4><p>Sim. Rotinas específicas de 0 a 2 anos.</p></div>
-                <div class="faq-item"><h4>❓ Preciso deixar meu bebê chorar?</h4><p>Não. O método é 100% gentil.</p></div>
-                <div class="faq-item"><h4>❓ Como recebo o material?</h4><p>Imediatamente no seu e-mail após a compra.</p></div>
-                <div class="faq-item"><h4>❓ Vou conseguir aplicar mesmo sem tempo?</h4><p>Sim! O método foi desenhado para mães exaustas que não têm um minuto sobrando. São rituais rápidos de 20 minutos que economizam horas de choro depois.</p></div>
+                <div class="faq-item">
+                    <h4>❓ Funciona para qualquer idade?</h4>
+                    <p>Sim. Rotinas específicas de 0 a 2 anos.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>❓ Preciso deixar meu bebê chorar?</h4>
+                    <p>Não. O método é 100% gentil.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>❓ Como recebo o material?</h4>
+                    <p>Imediatamente no seu e-mail após a compra.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>❓ Vou conseguir aplicar mesmo sem tempo?</h4>
+                    <p>Sim! O método foi desenhado para mães exaustas que não têm um minuto sobrando. São rituais
+                        rápidos de 20 minutos que economizam horas de choro depois.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -180,7 +326,8 @@
     <section class="blue-light-bg text-center">
         <div class="container">
             <h2>Essa pode ser sua última noite sem dormir</h2>
-            <p style="margin-bottom: 2rem;">Você já abriu mão de noites demais. Seu bebê merece dormir bem. Você merece descansar.</p>
+            <p style="margin-bottom: 2rem;">Você já abriu mão de noites demais. Seu bebê merece dormir bem. Você merece
+                descansar.</p>
             <a href="https://pay.cakto.com.br/rs6voyf_855079" class="cta-button">SIM, ESSA NOITE VAI SER DIFERENTE →</a>
         </div>
     </section>
@@ -188,7 +335,8 @@
     <footer>
         <div class="container">
             <p>Método Noite Tranquila © 2026 — Todos os direitos reservados</p>
-            <div class="disclaimer">⚠️ Os resultados podem variar. Este material tem caráter educativo e não substitui avaliação médica.</div>
+            <div class="disclaimer">⚠️ Os resultados podem variar. Este material tem caráter educativo e não substitui
+                avaliação médica.</div>
         </div>
     </footer>
 
@@ -198,4 +346,5 @@
     </div>
 
 </body>
+
 </html>
